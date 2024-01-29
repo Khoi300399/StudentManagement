@@ -1,0 +1,7 @@
+*.mdf
+*.ldf
+.git/
+.vs/
+./StudentManagementSoftware/.vs/*
+StudentManagementSoftware/bin
+StudentManagementSoftware/obj
