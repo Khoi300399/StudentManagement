@@ -53,9 +53,10 @@
         End If
 
         Try
-            connect.laygiatritruyvan("INSERT INTO dt_student(fullname, email, birthday, phone, address) VALUES( N'" & txtFullname.EditValue & "', N'" & txtEmail.EditValue & "','" & Convert.ToDateTime(txtBirthday.EditValue) & "'," & Convert.ToInt32(txtPhone.EditValue) & ", N'" & txtAddress.EditValue & "') ")
+            Dim query As String = "INSERT INTO dt_student(fullname, email, birthday, phone, address) VALUES (N'" & txtFullname.EditValue & "',N'" & txtEmail.EditValue & "','" & Convert.ToDateTime(txtBirthday.EditValue).ToString("yyyy-MM-dd") & "'," & CInt(txtPhone.EditValue) & ",N'" & txtAddress.EditValue & "' )"
+            connect.setValueDatabase(query)
             btnSave.Enabled = False
-
+            Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

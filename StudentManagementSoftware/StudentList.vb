@@ -10,19 +10,17 @@ Public Class frmStudentList
 
         Try
             source()
-
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
     End Sub
 
     Private Sub source()
-        dt = connect.getDataTable("SELECT * FROM dt_student ORDER BY id")
+        connect.Initialize()
+        dt = connect.getDataTable("SELECT * FROM dt_student")
         dt.TableName = "dt_student"
         grid.DataSource = dt
     End Sub
-
-
 
     Private Sub detail_RowUpdated(sender As Object, e As RowObjectEventArgs) Handles detail.RowUpdated
         Try
@@ -76,7 +74,7 @@ Public Class frmStudentList
     Private Sub btnDelete_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnDelete.ItemClick
         Try
             If MsgBox("Are you sure you want to delete this data?", MsgBoxStyle.YesNo, "Warning!") = MsgBoxResult.Yes Then
-                connect.thuchientruyvan("DELETE dt_student WHERE id = N'" & Convert.ToString(detail.GetRowCellValue(detail.FocusedRowHandle, "id")) & "'")
+                connect.queryingData("DELETE dt_student WHERE id = N'" & Convert.ToString(detail.GetRowCellValue(detail.FocusedRowHandle, "id")) & "'")
                 source()
             End If
         Catch ex As Exception
@@ -89,8 +87,8 @@ Public Class frmStudentList
         Link.Component = grid
         Link.CreateDocument()
         Dim frm As New PrintTool(Link.PrintingSystemBase)
-        frm.PreviewForm.Name = "xuatfile"
-        frm.PreviewForm.Text = "xuatfile"
+        frm.PreviewForm.Name = "studentlist"
+        frm.PreviewForm.Text = "studentlist"
         frm.ShowPreview()
     End Sub
 
