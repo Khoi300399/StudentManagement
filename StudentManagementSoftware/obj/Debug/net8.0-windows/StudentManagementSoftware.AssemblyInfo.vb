@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("StudentManagementSoftware"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3727435438f189aed772ba8bf1474d3e9add4878"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b466f5d2c276c8dfa408e1d0da6ab50d857c298c"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("StudentManagementSoftware"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("StudentManagementSoftware"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
